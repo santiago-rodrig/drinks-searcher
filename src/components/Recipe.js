@@ -91,6 +91,7 @@ const Recipe = ({ recipe }) => {
                             <img
                                 className="img-fluid my-4"
                                 src={recipeDetails.strDrinkThumb}
+                                alt={recipeDetails.strDrink}
                             />
                             <h3>Ingredientes y cantidades</h3>
                             <ul>{listIngredients()}</ul>
