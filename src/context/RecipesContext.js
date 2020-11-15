@@ -22,7 +22,7 @@ const RecipesProvider = ({ children }) => {
                 setRecipes(payload.data.drinks)
             }
         }
-    }, [query])
+    }, [query, setRecipes])
 
     return (
         <RecipesContext.Provider value={{ setQuery }}>
