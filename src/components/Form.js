@@ -24,6 +24,7 @@ const Form = () => {
               <option value="" disabled>
                 -- Selecciona una categoría --
               </option>
+              {categories.map(c => <option value={c.strCategory} key={c.strCategory}>{c.strCategory}</option>)}
             </select>
           </div>
           <div className="col-md-4">
