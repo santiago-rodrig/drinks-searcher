@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
         position: 'absolute',
         width: 600,
         backgroundColor: theme.palette.background.paper,
-        boxShadow: theme.shadow[5],
+        boxShadow: theme.shadows[5],
         padding: theme.spacing(2, 4, 3),
     },
 }))
@@ -28,7 +28,7 @@ const Recipe = ({ recipe }) => {
     const [modalStyle] = useState(getModalStyle)
     const [open, setOpen] = useState(false)
     const classes = useStyles()
-    const { setIdRecipe } = useContext(ModalContext)
+    const { setIdRecipe, recipe: recipeDetails, setRecipe: setRecipeDetails } = useContext(ModalContext)
 
     const handleOpen = () => {
         setOpen(true)
@@ -37,6 +37,7 @@ const Recipe = ({ recipe }) => {
     const handleClose = () => {
         setOpen(false)
         setIdRecipe(null)
+        setRecipeDetails({})
     }
 
     const handleClick = () => {
@@ -63,7 +64,10 @@ const Recipe = ({ recipe }) => {
                     </button>
                     <Modal open={open} onClose={() => handleClose()}>
                         <div style={modalStyle} className={classes.paper}>
-                            <h1>Modal component</h1>
+                            <h2>{recipeDetails.strDrink}</h2>
+                            <h3 className="mt-4">Instrucciones</h3>
+                            <p>{recipeDetails.strInstructions}</p>
+                            <img className="img-fluid my-4" src={recipeDetails.strDrinkThumb} />
                         </div>
                     </Modal>
                 </div>
