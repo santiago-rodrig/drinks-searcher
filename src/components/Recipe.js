@@ -28,7 +28,11 @@ const Recipe = ({ recipe }) => {
     const [modalStyle] = useState(getModalStyle)
     const [open, setOpen] = useState(false)
     const classes = useStyles()
-    const { setIdRecipe, recipe: recipeDetails, setRecipe: setRecipeDetails } = useContext(ModalContext)
+    const {
+        setIdRecipe,
+        recipe: recipeDetails,
+        setRecipe: setRecipeDetails,
+    } = useContext(ModalContext)
 
     const handleOpen = () => {
         setOpen(true)
@@ -67,7 +71,10 @@ const Recipe = ({ recipe }) => {
                             <h2>{recipeDetails.strDrink}</h2>
                             <h3 className="mt-4">Instrucciones</h3>
                             <p>{recipeDetails.strInstructions}</p>
-                            <img className="img-fluid my-4" src={recipeDetails.strDrinkThumb} />
+                            <img
+                                className="img-fluid my-4"
+                                src={recipeDetails.strDrinkThumb}
+                            />
                         </div>
                     </Modal>
                 </div>
