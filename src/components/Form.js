@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 const Form = () => {
   return (
@@ -7,7 +7,7 @@ const Form = () => {
         <h1>Form component</h1>
       </form>
     </div>
-  )
-}
+  );
+};
 
-export default Form
+export default Form;
