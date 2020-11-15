@@ -21,6 +21,8 @@ const RecipesProvider = ({ children }) => {
 
                 setRecipes(payload.data.drinks)
             }
+
+            queryAPI()
         }
     }, [query, setRecipes])
 
