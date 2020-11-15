@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
         boxShadow: theme.shadows[5],
         padding: theme.spacing(2, 4, 3),
         height: 600,
-        overflow: 'auto'
+        overflow: 'auto',
     },
 }))
 
@@ -93,9 +93,7 @@ const Recipe = ({ recipe }) => {
                                 src={recipeDetails.strDrinkThumb}
                             />
                             <h3>Ingredientes y cantidades</h3>
-                            <ul>
-                                {listIngredients()}
-                            </ul>
+                            <ul>{listIngredients()}</ul>
                         </div>
                     </Modal>
                 </div>
