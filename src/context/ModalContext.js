@@ -17,7 +17,7 @@ const ModalProvider = ({ children }) => {
 
             getRecipeFromAPI()
         }
-    }, [idRecipe])
+    }, [idRecipe, setRecipe])
 
     return (
         <ModalContext.Provider value={{ setIdRecipe }}>
