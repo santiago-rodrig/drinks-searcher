@@ -4,18 +4,21 @@ import Form from './components/Form'
 import Recipes from './components/Recipes'
 import CategoriesProvider from './context/CategoriesContext'
 import RecipesProvider from './context/RecipesContext'
+import ModalProvider from './context/ModalContext'
 
 function App() {
     return (
         <CategoriesProvider>
             <RecipesProvider>
-                <Header />
-                <div className="container">
-                    <div className="row">
-                        <Form />
+                <ModalProvider>
+                    <Header />
+                    <div className="container">
+                        <div className="row">
+                            <Form />
+                        </div>
+                        <Recipes />
                     </div>
-                    <Recipes />
-                </div>
+                </ModalProvider>
             </RecipesProvider>
         </CategoriesProvider>
     )
