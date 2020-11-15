@@ -1,8 +1,22 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { CategoriesContext } from "../context/CategoriesContext";
 
 const Form = () => {
   const { categories } = useContext(CategoriesContext);
+
+  const [query, setQuery] = useState({
+    ingredient: "",
+    category: "",
+  });
+
+  const { ingredient, category } = query;
+
+  const handleChange = (e) => {
+    setQuery({
+      ...query,
+      [e.target.name]: e.target.value,
+    });
+  };
 
   return (
     <div className="col-12 mt-4">
@@ -14,17 +28,28 @@ const Form = () => {
           <div className="col-md-4">
             <input
               type="text"
-              name="name"
+              name="ingredient"
               className="form-control"
               placeholder="Ingrediente"
+              value={ingredient}
+              onChange={handleChange}
             />
           </div>
           <div className="col-md-4">
-            <select className="form-control" name="category" defaultValue="">
+            <select
+              className="form-control"
+              name="category"
+              value={category}
+              onChange={handleChange}
+            >
               <option value="" disabled>
                 -- Selecciona una categoría --
               </option>
-              {categories.map(c => <option value={c.strCategory} key={c.strCategory}>{c.strCategory}</option>)}
+              {categories.map((c) => (
+                <option value={c.strCategory} key={c.strCategory}>
+                  {c.strCategory}
+                </option>
+              ))}
             </select>
           </div>
           <div className="col-md-4">
