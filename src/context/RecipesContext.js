@@ -27,7 +27,7 @@ const RecipesProvider = ({ children }) => {
     }, [query, setRecipes])
 
     return (
-        <RecipesContext.Provider value={{ setQuery }}>
+        <RecipesContext.Provider value={{ setQuery, recipes }}>
             {children}
         </RecipesContext.Provider>
     )

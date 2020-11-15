@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from './components/Header'
 import Form from './components/Form'
+import Recipes from './components/Recipes'
 import CategoriesProvider from './context/CategoriesContext'
 import RecipesProvider from './context/RecipesContext'
 
@@ -13,6 +14,7 @@ function App() {
                     <div className="row">
                         <Form />
                     </div>
+                    <Recipes />
                 </div>
             </RecipesProvider>
         </CategoriesProvider>
