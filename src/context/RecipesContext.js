@@ -16,7 +16,7 @@ const RecipesProvider = ({ children }) => {
     useEffect(() => {
         if (Object.values(query).filter((v) => v.trim() !== '').length === 2) {
             const queryAPI = async () => {
-                const url = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${ingredient}c=${category}`
+                const url = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${ingredient}&c=${category}`
                 const payload = await axios.get(url)
 
                 setRecipes(payload.data.drinks)
