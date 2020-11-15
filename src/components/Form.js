@@ -2,8 +2,7 @@ import React, { useContext } from "react";
 import { CategoriesContext } from "../context/CategoriesContext";
 
 const Form = () => {
-  const { state } = useContext(CategoriesContext);
-  alert(state);
+  const { categories } = useContext(CategoriesContext);
 
   return (
     <div className="col-12 mt-4">
