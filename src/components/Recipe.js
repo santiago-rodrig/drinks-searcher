@@ -16,11 +16,13 @@ const getModalStyle = () => {
 
 const useStyles = makeStyles((theme) => ({
     paper: {
-        position: 'absolute',
-        width: 600,
+        position: 'fixed',
+        width: 450,
         backgroundColor: theme.palette.background.paper,
         boxShadow: theme.shadows[5],
         padding: theme.spacing(2, 4, 3),
+        height: 600,
+        overflow: 'auto'
     },
 }))
 
@@ -49,6 +51,21 @@ const Recipe = ({ recipe }) => {
         handleOpen()
     }
 
+    const listIngredients = () => {
+        let ingredients = []
+        let ingredient
+
+        for (let i = 1; i < 16; i += 1) {
+            ingredient = recipeDetails[`strIngredient${i}`]
+
+            if (ingredient) {
+                ingredients.push(<li key={i}>{ingredient}</li>)
+            }
+        }
+
+        return ingredients
+    }
+
     return (
         <div className="col-12 col-md-4 mb-3">
             <div className="card w-100">
@@ -75,6 +92,10 @@ const Recipe = ({ recipe }) => {
                                 className="img-fluid my-4"
                                 src={recipeDetails.strDrinkThumb}
                             />
+                            <h3>Ingredientes y cantidades</h3>
+                            <ul>
+                                {listIngredients()}
+                            </ul>
                         </div>
                     </Modal>
                 </div>
